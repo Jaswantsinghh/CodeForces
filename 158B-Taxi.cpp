@@ -71,18 +71,6 @@ int main()
             if (one > 2)
             {
                 one -= 2;
-
-                if (one <= 4)
-                {
-                    cnt++;
-                    one = 0;
-                }
-                else
-                {
-                    cnt += one / 4;
-                    cnt++;
-                    one = 0;
-                }
             }
             else
             {
@@ -92,24 +80,16 @@ int main()
     }
     if (one > 0)
     {
-        if (one <= 4)
+        if (one % 4 == 0)
         {
-            cnt++;
+            cnt += one / 4;
             one = 0;
         }
         else
         {
-            if (one % 4 != 0)
-            {
-                cnt += one / 4;
-                cnt++;
-                one = 0;
-            }
-            else
-            {
-                cnt += one / 4;
-                one = 0;
-            }
+            cnt += one / 4;
+            cnt++;
+            one = 0;
         }
     }
     cout << cnt << "\n";
